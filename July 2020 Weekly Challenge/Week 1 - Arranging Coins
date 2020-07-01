@@ -1,0 +1,32 @@
+"""
+This can be solved with of little Math!
+             max  range
+line 1's sum =  1    0-1
+line 2's sum =  3    2-3
+line 3's sum =  6    4-6
+line 4's sum = 10    7-10
+.......................
+line q's sum = 1+2+3+... + q
+this above sum will be <= n for any qth line
+
+=>1+2+3+... + q <= n
+q*(q+1)/2 <= n
+q*(q+1) <= n*2
+
+so only if (q*(q+1)) is greater than 2*n then complete steps are only q-1
+
+take one example why not ">=" :
+
+n = 1
+q = int(1.414) = 1
+only one step can be formed
+
+"""
+
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        q=int((2*n)**0.5)
+        if ((q*(q+1))>(2*n)):
+            return q-1
+        return q
+  
