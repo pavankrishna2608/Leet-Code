@@ -1,0 +1,10 @@
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        res=set()
+        for i in range(len(nums)+1):
+            for j in combinations(nums,i):
+                list_item = list(j)
+                list_item.sort()
+                tuple_item = tuple(list_item)
+                res.update([tuple_item])
+        return res
