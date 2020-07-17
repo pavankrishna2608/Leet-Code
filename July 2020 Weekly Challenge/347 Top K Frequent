@@ -1,0 +1,3 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        return list(sorted(set(nums), key=nums.count))[::-1][:k]
